@@ -1,0 +1,114 @@
+/* Make everything include padding and border in width */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Keep existing styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(245, 241, 236, 0.95);
+    color: #333;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: clamp(1rem, 5vw, 5rem); /* responsive top padding */
+    box-sizing: border-box;
+}
+
+
+/* H1 with responsive scaling */
+h1 {
+    font-size: clamp(2rem, 6vw, 10rem);
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #111;
+    font-family: "Beau Rivage", cursive;
+    font-style: italic;
+    margin: 2rem 1rem;
+    text-align: center;
+    word-wrap: break-word; /* ensure it wraps */
+}
+
+/* Paragraphs */
+p {
+    font-family: "Cactus Classical Serif", serif;
+    font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 100;
+    text-align: center;
+    margin: 0.5rem 1rem;
+}
+
+form,
+form label,
+form input,
+form textarea,
+form button {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(230, 225, 210, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 4rem;
+    font-family: 'Roboto', Arial, sans-serif; /* clean, readable */
+}
+
+/* Labels & inputs */
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+}
+
+input, textarea {
+    margin-top: 5px;
+    padding: 12px;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    background-color: #800020;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #a00030;
+}
+
+/* Media queries remain similar, but h1 and p use clamp so scaling is smooth */
